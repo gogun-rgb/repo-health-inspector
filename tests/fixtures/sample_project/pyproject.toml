@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sample-project"
+version = "0.1.0"
+description = "A tiny sample project used by repo-health-inspector tests."
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.7"]
+
+[project.scripts]
+sample-project = "sample_project.cli:main"
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.11"
+
+[tool.coverage.run]
+source = ["sample_project"]

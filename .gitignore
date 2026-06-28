@@ -1,0 +1,33 @@
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local secrets and machine-specific files
+.env
+.env.*
+!.env.example
+
+# Reports generated during local experimentation
+reports/local-*-report.md
+reports/local-*-report.json
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

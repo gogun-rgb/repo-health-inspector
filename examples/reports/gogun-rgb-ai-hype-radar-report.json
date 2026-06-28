@@ -1,0 +1,504 @@
+{
+  "repository": {
+    "name": "ai-hype-radar",
+    "owner": "gogun-rgb",
+    "url": "https://github.com/gogun-rgb/ai-hype-radar",
+    "default_branch": "main",
+    "local_path": null
+  },
+  "analysis_timestamp": "2026-06-28T10:49:11.263298Z",
+  "total_score": 55.1,
+  "score_label": "Needs work",
+  "evaluated_score": 55.1,
+  "evaluated_score_label": "Needs work",
+  "evaluated_rule_count": 40,
+  "skipped_rule_count": 0,
+  "total_rule_count": 40,
+  "skipped_score": 0.0,
+  "category_scores": [
+    {
+      "category": "Documentation",
+      "earned_score": 18.0,
+      "max_score": 20.0
+    },
+    {
+      "category": "Testing and CI",
+      "earned_score": 3.0,
+      "max_score": 20.0
+    },
+    {
+      "category": "Project structure",
+      "earned_score": 4.3,
+      "max_score": 20.0
+    },
+    {
+      "category": "Security and reliability",
+      "earned_score": 14.0,
+      "max_score": 20.0
+    },
+    {
+      "category": "Maintenance and community",
+      "earned_score": 15.8,
+      "max_score": 20.0
+    }
+  ],
+  "strengths": [
+    "README exists: Found README.md.",
+    "Recent commit activity: Default branch was updated 0 day(s) ago.",
+    "No obvious committed secrets: No high-confidence committed secret patterns were detected.",
+    "README has meaningful content: README contains 913 words.",
+    "Screenshots or demos are referenced: README references screenshots, demos, or sample output.",
+    "Release history exists: 1 release(s) were found. Latest release: 2026-06-28.",
+    "Repository is not archived: Repository is not archived.",
+    ".env is ignored: .env is ignored by .gitignore."
+  ],
+  "warnings": [
+    "Changelog exists: No changelog file was found.",
+    "Contributing guide exists: No contributing guide was found.",
+    "Tests directory exists: No tests/ directory was found.",
+    "Test files exist: No test_*.py or *_test.py files were found.",
+    "Workflow runs tests: No test command was detected in CI workflow files.",
+    "Coverage configuration exists: No coverage configuration was detected.",
+    "Lint configuration exists: No lint configuration was detected.",
+    "Type-check configuration exists: No type-check configuration was detected.",
+    "Source directory structure exists: No importable Python package layout was detected.",
+    "Dependency manifest exists: No Python dependency manifest was found.",
+    "Modular Python organization exists: No modular Python source organization was detected.",
+    "Package metadata exists: Package metadata was incomplete or missing.",
+    "Dependencies are declared: No runtime dependency declarations were detected.",
+    "Command-line entry point exists: No CLI entry point was detected.",
+    "Dependency versions are constrained: Dependency declarations do not appear version-constrained.",
+    "Exception handling is present: Little or no explicit exception handling was detected.",
+    "Input validation is present: No obvious input validation patterns were detected.",
+    "Security policy exists: No security policy file was found.",
+    "Issue activity is visible: No issue activity was visible.",
+    "Contributor activity is visible: One contributor was found.",
+    "Repository topics exist: No GitHub topics were found."
+  ],
+  "recommendations": [
+    "[STR001] Use a clear package layout such as src/package_name/.",
+    "[TST001] Add a tests/ directory with meaningful automated tests.",
+    "[TST002] Add pytest or unittest files that cover behavior, not only imports.",
+    "[STR002] Add pyproject.toml, requirements.txt, setup.cfg, or an equivalent manifest.",
+    "[STR005] Split non-trivial behavior into focused modules instead of one large script.",
+    "[STR006] Populate [project] metadata such as name, version, description, and Python support.",
+    "[TST004] Run pytest, unittest, tox, or nox from CI.",
+    "[MNT002] Use GitHub issues to track bugs, questions, and completed maintenance work.",
+    "[STR007] Declare runtime dependencies in pyproject.toml or requirements files.",
+    "[TST005] Configure coverage.py or pytest-cov and enforce a threshold.",
+    "[TST006] Configure a linter such as Ruff and run it in CI.",
+    "[TST007] Configure mypy or pyright and run type checks in CI."
+  ],
+  "rule_results": [
+    {
+      "rule_id": "DOC001",
+      "title": "README exists",
+      "category": "Documentation",
+      "max_score": 4.0,
+      "earned_score": 4.0,
+      "status": "passed",
+      "explanation": "Found README.md.",
+      "recommendation": "Add a README that explains what the project does and how to use it."
+    },
+    {
+      "rule_id": "DOC002",
+      "title": "README has meaningful content",
+      "category": "Documentation",
+      "max_score": 3.0,
+      "earned_score": 3.0,
+      "status": "passed",
+      "explanation": "README contains 913 words.",
+      "recommendation": "Expand the README beyond a title with practical setup and usage details."
+    },
+    {
+      "rule_id": "DOC003",
+      "title": "Project description is present",
+      "category": "Documentation",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": "Repository metadata contains a useful description.",
+      "recommendation": "Add a concise value proposition in the README or repository metadata."
+    },
+    {
+      "rule_id": "DOC004",
+      "title": "Installation instructions are present",
+      "category": "Documentation",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": "Installation guidance is present.",
+      "recommendation": "Document installation steps such as pip, uv, Poetry, or source installs."
+    },
+    {
+      "rule_id": "DOC005",
+      "title": "Usage instructions are present",
+      "category": "Documentation",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": "Usage guidance is present.",
+      "recommendation": "Show at least one command or code example for normal project usage."
+    },
+    {
+      "rule_id": "DOC006",
+      "title": "License file exists",
+      "category": "Documentation",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": "A license file is present.",
+      "recommendation": "Add an OSI-approved license file so users know the reuse terms."
+    },
+    {
+      "rule_id": "DOC007",
+      "title": "Changelog exists",
+      "category": "Documentation",
+      "max_score": 1.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No changelog file was found.",
+      "recommendation": "Add a CHANGELOG to make project evolution easy to scan."
+    },
+    {
+      "rule_id": "DOC008",
+      "title": "Contributing guide exists",
+      "category": "Documentation",
+      "max_score": 1.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No contributing guide was found.",
+      "recommendation": "Add CONTRIBUTING.md with setup, testing, and contribution expectations."
+    },
+    {
+      "rule_id": "DOC009",
+      "title": "Screenshots or demos are referenced",
+      "category": "Documentation",
+      "max_score": 3.0,
+      "earned_score": 3.0,
+      "status": "passed",
+      "explanation": "README references screenshots, demos, or sample output.",
+      "recommendation": "Add a screenshot, terminal capture, GIF, demo link, or example output."
+    },
+    {
+      "rule_id": "TST001",
+      "title": "Tests directory exists",
+      "category": "Testing and CI",
+      "max_score": 4.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No tests/ directory was found.",
+      "recommendation": "Add a tests/ directory with meaningful automated tests."
+    },
+    {
+      "rule_id": "TST002",
+      "title": "Test files exist",
+      "category": "Testing and CI",
+      "max_score": 4.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No test_*.py or *_test.py files were found.",
+      "recommendation": "Add pytest or unittest files that cover behavior, not only imports."
+    },
+    {
+      "rule_id": "TST003",
+      "title": "GitHub Actions workflow exists",
+      "category": "Testing and CI",
+      "max_score": 3.0,
+      "earned_score": 3.0,
+      "status": "passed",
+      "explanation": "Found 1 GitHub Actions workflow file(s).",
+      "recommendation": "Add a GitHub Actions workflow that runs on push and pull_request."
+    },
+    {
+      "rule_id": "TST004",
+      "title": "Workflow runs tests",
+      "category": "Testing and CI",
+      "max_score": 3.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No test command was detected in CI workflow files.",
+      "recommendation": "Run pytest, unittest, tox, or nox from CI."
+    },
+    {
+      "rule_id": "TST005",
+      "title": "Coverage configuration exists",
+      "category": "Testing and CI",
+      "max_score": 2.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No coverage configuration was detected.",
+      "recommendation": "Configure coverage.py or pytest-cov and enforce a threshold."
+    },
+    {
+      "rule_id": "TST006",
+      "title": "Lint configuration exists",
+      "category": "Testing and CI",
+      "max_score": 2.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No lint configuration was detected.",
+      "recommendation": "Configure a linter such as Ruff and run it in CI."
+    },
+    {
+      "rule_id": "TST007",
+      "title": "Type-check configuration exists",
+      "category": "Testing and CI",
+      "max_score": 2.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No type-check configuration was detected.",
+      "recommendation": "Configure mypy or pyright and run type checks in CI."
+    },
+    {
+      "rule_id": "STR001",
+      "title": "Source directory structure exists",
+      "category": "Project structure",
+      "max_score": 4.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No importable Python package layout was detected.",
+      "recommendation": "Use a clear package layout such as src/package_name/."
+    },
+    {
+      "rule_id": "STR002",
+      "title": "Dependency manifest exists",
+      "category": "Project structure",
+      "max_score": 3.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No Python dependency manifest was found.",
+      "recommendation": "Add pyproject.toml, requirements.txt, setup.cfg, or an equivalent manifest."
+    },
+    {
+      "rule_id": "STR003",
+      "title": ".gitignore exists",
+      "category": "Project structure",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": ".gitignore is present.",
+      "recommendation": "Add .gitignore entries for caches, virtualenvs, secrets, and build outputs."
+    },
+    {
+      "rule_id": "STR004",
+      "title": "Example environment file exists",
+      "category": "Project structure",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": "An example environment file is present.",
+      "recommendation": "Add .env.example or .env.sample documenting optional environment variables."
+    },
+    {
+      "rule_id": "STR005",
+      "title": "Modular Python organization exists",
+      "category": "Project structure",
+      "max_score": 3.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No modular Python source organization was detected.",
+      "recommendation": "Split non-trivial behavior into focused modules instead of one large script."
+    },
+    {
+      "rule_id": "STR006",
+      "title": "Package metadata exists",
+      "category": "Project structure",
+      "max_score": 3.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "Package metadata was incomplete or missing.",
+      "recommendation": "Populate [project] metadata such as name, version, description, and Python support."
+    },
+    {
+      "rule_id": "STR007",
+      "title": "Dependencies are declared",
+      "category": "Project structure",
+      "max_score": 2.0,
+      "earned_score": 0.0,
+      "status": "failed",
+      "explanation": "No runtime dependency declarations were detected.",
+      "recommendation": "Declare runtime dependencies in pyproject.toml or requirements files."
+    },
+    {
+      "rule_id": "STR008",
+      "title": "Command-line entry point exists",
+      "category": "Project structure",
+      "max_score": 1.0,
+      "earned_score": 0.3,
+      "status": "warning",
+      "explanation": "No CLI entry point was detected.",
+      "recommendation": "Expose CLI tools through [project.scripts] or equivalent entry points."
+    },
+    {
+      "rule_id": "SEC001",
+      "title": "No obvious committed secrets",
+      "category": "Security and reliability",
+      "max_score": 4.0,
+      "earned_score": 4.0,
+      "status": "passed",
+      "explanation": "No high-confidence committed secret patterns were detected.",
+      "recommendation": "Remove committed secrets, rotate exposed credentials, and keep real values out of Git."
+    },
+    {
+      "rule_id": "SEC002",
+      "title": ".env is ignored",
+      "category": "Security and reliability",
+      "max_score": 3.0,
+      "earned_score": 3.0,
+      "status": "passed",
+      "explanation": ".env is ignored by .gitignore.",
+      "recommendation": "Add .env to .gitignore while keeping .env.example tracked."
+    },
+    {
+      "rule_id": "SEC003",
+      "title": "Dependency versions are constrained",
+      "category": "Security and reliability",
+      "max_score": 2.0,
+      "earned_score": 0.5,
+      "status": "warning",
+      "explanation": "Dependency declarations do not appear version-constrained.",
+      "recommendation": "Use version ranges or lock files so dependency changes are intentional."
+    },
+    {
+      "rule_id": "SEC004",
+      "title": "Exception handling is present",
+      "category": "Security and reliability",
+      "max_score": 2.0,
+      "earned_score": 0.5,
+      "status": "warning",
+      "explanation": "Little or no explicit exception handling was detected.",
+      "recommendation": "Handle expected network, parsing, and filesystem errors explicitly."
+    },
+    {
+      "rule_id": "SEC005",
+      "title": "Input validation is present",
+      "category": "Security and reliability",
+      "max_score": 2.0,
+      "earned_score": 0.5,
+      "status": "warning",
+      "explanation": "No obvious input validation patterns were detected.",
+      "recommendation": "Validate URLs, paths, and external data before using them."
+    },
+    {
+      "rule_id": "SEC006",
+      "title": "No unsafe eval usage",
+      "category": "Security and reliability",
+      "max_score": 3.0,
+      "earned_score": 3.0,
+      "status": "passed",
+      "explanation": "No unsafe dynamic execution or deserialization was detected.",
+      "recommendation": "Avoid eval, exec, and unsafe deserialization on untrusted input."
+    },
+    {
+      "rule_id": "SEC007",
+      "title": "No hardcoded API token patterns",
+      "category": "Security and reliability",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": "No hardcoded API token patterns were detected.",
+      "recommendation": "Use environment variables or secret stores for tokens and API keys."
+    },
+    {
+      "rule_id": "SEC008",
+      "title": "Security policy exists",
+      "category": "Security and reliability",
+      "max_score": 2.0,
+      "earned_score": 0.5,
+      "status": "warning",
+      "explanation": "No security policy file was found.",
+      "recommendation": "Add SECURITY.md with vulnerability reporting guidance."
+    },
+    {
+      "rule_id": "MNT001",
+      "title": "Recent commit activity",
+      "category": "Maintenance and community",
+      "max_score": 4.0,
+      "earned_score": 4.0,
+      "status": "passed",
+      "explanation": "Default branch was updated 0 day(s) ago.",
+      "recommendation": "Keep the default branch active or explain maintenance status in the README."
+    },
+    {
+      "rule_id": "MNT002",
+      "title": "Issue activity is visible",
+      "category": "Maintenance and community",
+      "max_score": 3.0,
+      "earned_score": 1.0,
+      "status": "warning",
+      "explanation": "No issue activity was visible.",
+      "recommendation": "Use GitHub issues to track bugs, questions, and completed maintenance work."
+    },
+    {
+      "rule_id": "MNT003",
+      "title": "Release history exists",
+      "category": "Maintenance and community",
+      "max_score": 3.0,
+      "earned_score": 3.0,
+      "status": "passed",
+      "explanation": "1 release(s) were found. Latest release: 2026-06-28.",
+      "recommendation": "Create GitHub releases for meaningful milestones."
+    },
+    {
+      "rule_id": "MNT004",
+      "title": "Contributor activity is visible",
+      "category": "Maintenance and community",
+      "max_score": 3.0,
+      "earned_score": 1.5,
+      "status": "warning",
+      "explanation": "One contributor was found.",
+      "recommendation": "Make contribution paths clear and acknowledge contributors when they appear."
+    },
+    {
+      "rule_id": "MNT005",
+      "title": "Repository is not archived",
+      "category": "Maintenance and community",
+      "max_score": 3.0,
+      "earned_score": 3.0,
+      "status": "passed",
+      "explanation": "Repository is not archived.",
+      "recommendation": "Unarchive active projects or document that the project is intentionally archived."
+    },
+    {
+      "rule_id": "MNT006",
+      "title": "Repository description exists",
+      "category": "Maintenance and community",
+      "max_score": 2.0,
+      "earned_score": 2.0,
+      "status": "passed",
+      "explanation": "GitHub repository description is present.",
+      "recommendation": "Add a concise GitHub repository description."
+    },
+    {
+      "rule_id": "MNT007",
+      "title": "Repository topics exist",
+      "category": "Maintenance and community",
+      "max_score": 1.0,
+      "earned_score": 0.3,
+      "status": "warning",
+      "explanation": "No GitHub topics were found.",
+      "recommendation": "Add relevant GitHub topics so the project is easier to discover."
+    },
+    {
+      "rule_id": "MNT008",
+      "title": "Default branch is known",
+      "category": "Maintenance and community",
+      "max_score": 1.0,
+      "earned_score": 1.0,
+      "status": "passed",
+      "explanation": "Default branch is main.",
+      "recommendation": "Ensure the repository exposes a clear default branch."
+    }
+  ],
+  "disclaimer": "Repo Health Inspector performs lightweight static analysis. It can highlight common readiness signals, but it does not prove that a repository is bug-free, secure, maintained, or production-ready.",
+  "generated_by": "repo-health-inspector 0.1.0",
+  "report_notes": [
+    "Generated by repo-health-inspector 0.1.0.",
+    "This report represents the repository state at the recorded analysis timestamp; scores can change when the repository changes.",
+    "The analysis is based on lightweight static checks and GitHub metadata when available.",
+    "Skipped rules earn 0 points in the raw score; the evaluated score is calculated from non-skipped rules only."
+  ],
+  "sample_report": false,
+  "sample_report_notice": null
+}

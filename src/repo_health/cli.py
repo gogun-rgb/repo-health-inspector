@@ -185,7 +185,10 @@ def _print_summary(report: AnalysisReport) -> None:
     console.print(
         Panel.fit(
             f"[bold]{report.repository.display_name}[/]\n"
-            f"Score: [bold]{report.total_score:.1f}/100[/] ({report.score_label})",
+            f"Raw score: [bold]{report.total_score:.1f}/100[/] ({report.score_label})\n"
+            f"Evaluated score: [bold]{report.evaluated_score:.1f}%[/] "
+            f"({report.evaluated_score_label})\n"
+            f"Skipped rules: [bold]{report.skipped_rule_count}/{report.total_rule_count}[/]",
             title="Repository Health",
             border_style=panel_style,
         )
@@ -204,6 +207,9 @@ def _print_summary(report: AnalysisReport) -> None:
     _print_rule_group("Passed checks", report.rule_results, RuleStatus.PASSED, "green")
     _print_rule_group("Warnings", report.rule_results, RuleStatus.WARNING, "yellow")
     _print_rule_group("Failures", report.rule_results, RuleStatus.FAILED, "red")
+    _print_rule_group("Skipped checks", report.rule_results, RuleStatus.SKIPPED, "cyan")
+    if report.skipped_rule_count:
+        console.print("[cyan]Skipped rules count as 0 points in the raw score.[/]")
 
 
 def _print_rule_group(

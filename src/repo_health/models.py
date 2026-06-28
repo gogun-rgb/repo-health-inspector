@@ -155,7 +155,13 @@ class CategoryScore(BaseModel):
 
 
 class AnalysisReport(BaseModel):
-    """Machine-readable report produced by the analyzer."""
+    """Machine-readable report produced by the analyzer.
+
+    ``total_score`` is the raw 100-point score. Skipped rules earn zero raw
+    points so users can see when GitHub-only or unavailable checks reduce the
+    overall score. ``evaluated_score`` is the percentage earned from rules that
+    were actually evaluated.
+    """
 
     model_config = ConfigDict(extra="forbid")
 
@@ -163,6 +169,12 @@ class AnalysisReport(BaseModel):
     analysis_timestamp: datetime
     total_score: float = Field(ge=0, le=100)
     score_label: str
+    evaluated_score: float = Field(default=0, ge=0, le=100)
+    evaluated_score_label: str = "Poor"
+    evaluated_rule_count: int = Field(default=0, ge=0)
+    skipped_rule_count: int = Field(default=0, ge=0)
+    total_rule_count: int = Field(default=0, ge=0)
+    skipped_score: float = Field(default=0, ge=0, le=100)
     category_scores: list[CategoryScore]
     strengths: list[str]
     warnings: list[str]
@@ -170,6 +182,7 @@ class AnalysisReport(BaseModel):
     rule_results: list[RuleResult]
     disclaimer: str
     generated_by: str
+    report_notes: list[str] = Field(default_factory=list)
     sample_report: bool = False
     sample_report_notice: str | None = None
 
@@ -177,6 +190,13 @@ class AnalysisReport(BaseModel):
     @classmethod
     def round_total_score(cls, value: float) -> float:
         """Normalize total scores for stable reports."""
+
+        return round(value, 1)
+
+    @field_validator("evaluated_score", "skipped_score")
+    @classmethod
+    def round_summary_scores(cls, value: float) -> float:
+        """Normalize summary scores for stable reports."""
 
         return round(value, 1)
 

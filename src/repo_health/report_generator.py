@@ -48,8 +48,24 @@ def render_markdown_report(report: AnalysisReport) -> str:
         [
             f"- **Repository URL:** {report.repository.url or 'Local repository'}",
             f"- **Analysis timestamp:** {report.analysis_timestamp.isoformat()}",
-            f"- **Total score:** {report.total_score:.1f}/100",
-            f"- **Score label:** {report.score_label}",
+            f"- **Raw score:** {report.total_score:.1f}/100 ({report.score_label})",
+            (
+                f"- **Evaluated score:** {report.evaluated_score:.1f}% "
+                f"of applicable checks ({report.evaluated_score_label})"
+            ),
+            (f"- **Rules evaluated:** {report.evaluated_rule_count}/{report.total_rule_count}"),
+            (
+                f"- **Skipped rules:** {report.skipped_rule_count} "
+                f"({report.skipped_score:.1f} raw point(s) unavailable)"
+            ),
+            "",
+            "## Report Notes",
+            "",
+        ]
+    )
+    lines.extend(_bullet_list(report.report_notes))
+    lines.extend(
+        [
             "",
             "## Category Scores",
             "",
@@ -94,6 +110,8 @@ def render_markdown_report(report: AnalysisReport) -> str:
 
 
 def _bullet_list(items: list[str]) -> list[str]:
+    if not items:
+        return ["- None."]
     return [f"- {item}" for item in items]
 
 

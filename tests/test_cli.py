@@ -37,6 +37,10 @@ def test_cli_inspect_local_smoke(fixture_repo_path: Path, tmp_path: Path) -> Non
     )
 
     assert result.exit_code == 0
+    assert "Raw score" in result.output
+    assert "Evaluated score" in result.output
+    assert "Skipped rules" in result.output
+    assert "Skipped rules count as 0 points" in result.output
     assert "Saved report" in result.output
     assert list(tmp_path.glob("*-report.md"))
     assert list(tmp_path.glob("*-report.json"))
